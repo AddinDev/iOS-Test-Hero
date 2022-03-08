@@ -18,6 +18,20 @@
 		B8265A4627D79E2C00C9FAA9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B8265A4527D79E2C00C9FAA9 /* Realm */; };
 		B8265A4827D79E2C00C9FAA9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B8265A4727D79E2C00C9FAA9 /* RealmSwift */; };
 		B8265A4A27D79E6C00C9FAA9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B8265A4927D79E6C00C9FAA9 /* .swiftlint.yml */; };
+		B8265A5A27D79F0E00C9FAA9 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A5927D79F0E00C9FAA9 /* Injection.swift */; };
+		B8265A6427D79F5100C9FAA9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A6327D79F5100C9FAA9 /* Repository.swift */; };
+		B8265A6627D79F6000C9FAA9 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A6527D79F6000C9FAA9 /* RemoteDataSource.swift */; };
+		B8265A6A27D79F7800C9FAA9 /* LocaleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A6927D79F7800C9FAA9 /* LocaleDataSource.swift */; };
+		B8265A6D27D79F9300C9FAA9 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A6C27D79F9300C9FAA9 /* HeroModel.swift */; };
+		B8265A6F27D79F9B00C9FAA9 /* HeroResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A6E27D79F9B00C9FAA9 /* HeroResponse.swift */; };
+		B8265A7127D79FA100C9FAA9 /* HeroEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A7027D79FA100C9FAA9 /* HeroEntity.swift */; };
+		B8265A7527D79FC700C9FAA9 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A7427D79FC700C9FAA9 /* HomePresenter.swift */; };
+		B8265A7727D79FD200C9FAA9 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A7627D79FD200C9FAA9 /* HomeRouter.swift */; };
+		B8265A7B27D79FE900C9FAA9 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A7A27D79FE900C9FAA9 /* DetailPresenter.swift */; };
+		B8265A7D27D79FF500C9FAA9 /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A7C27D79FF500C9FAA9 /* HomeUseCase.swift */; };
+		B8265A8027D7A00600C9FAA9 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A7F27D7A00600C9FAA9 /* HeroMapper.swift */; };
+		B8265A8227D7A01500C9FAA9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A8127D7A01500C9FAA9 /* DetailView.swift */; };
+		B8265A8427D7A01A00C9FAA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A8327D7A01A00C9FAA9 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +63,20 @@
 		B8265A3227D79BF300C9FAA9 /* iOS_Test_HeroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Test_HeroUITests.swift; sourceTree = "<group>"; };
 		B8265A3427D79BF300C9FAA9 /* iOS_Test_HeroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Test_HeroUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B8265A4927D79E6C00C9FAA9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		B8265A5927D79F0E00C9FAA9 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		B8265A6327D79F5100C9FAA9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		B8265A6527D79F6000C9FAA9 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		B8265A6927D79F7800C9FAA9 /* LocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleDataSource.swift; sourceTree = "<group>"; };
+		B8265A6C27D79F9300C9FAA9 /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
+		B8265A6E27D79F9B00C9FAA9 /* HeroResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroResponse.swift; sourceTree = "<group>"; };
+		B8265A7027D79FA100C9FAA9 /* HeroEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroEntity.swift; sourceTree = "<group>"; };
+		B8265A7427D79FC700C9FAA9 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		B8265A7627D79FD200C9FAA9 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		B8265A7A27D79FE900C9FAA9 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		B8265A7C27D79FF500C9FAA9 /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
+		B8265A7F27D7A00600C9FAA9 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
+		B8265A8127D7A01500C9FAA9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		B8265A8327D7A01A00C9FAA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +131,10 @@
 		B8265A1627D79BF100C9FAA9 /* iOS Test Hero */ = {
 			isa = PBXGroup;
 			children = (
-				B8265A1727D79BF100C9FAA9 /* iOS_Test_HeroApp.swift */,
-				B8265A1927D79BF100C9FAA9 /* ContentView.swift */,
-				B8265A1B27D79BF200C9FAA9 /* Assets.xcassets */,
+				B8265A4E27D79EC200C9FAA9 /* App */,
+				B8265A4C27D79EB800C9FAA9 /* Core */,
+				B8265A4D27D79EBC00C9FAA9 /* Module */,
+				B8265A4F27D79EC500C9FAA9 /* Supporting Files */,
 				B8265A1D27D79BF200C9FAA9 /* Preview Content */,
 			);
 			path = "iOS Test Hero";
@@ -134,6 +163,219 @@
 				B8265A3427D79BF300C9FAA9 /* iOS_Test_HeroUITestsLaunchTests.swift */,
 			);
 			path = "iOS Test HeroUITests";
+			sourceTree = "<group>";
+		};
+		B8265A4C27D79EB800C9FAA9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A5327D79EE600C9FAA9 /* DI */,
+				B8265A5227D79EE400C9FAA9 /* Data */,
+				B8265A5127D79EE200C9FAA9 /* Domain */,
+				B8265A5027D79EDE00C9FAA9 /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B8265A4D27D79EBC00C9FAA9 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A5427D79EF900C9FAA9 /* Home */,
+				B8265A5527D79EFB00C9FAA9 /* Detail */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		B8265A4E27D79EC200C9FAA9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A1727D79BF100C9FAA9 /* iOS_Test_HeroApp.swift */,
+				B8265A1927D79BF100C9FAA9 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B8265A4F27D79EC500C9FAA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A1B27D79BF200C9FAA9 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8265A5027D79EDE00C9FAA9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A7E27D79FFF00C9FAA9 /* Mapper */,
+				B8265A6127D79F3B00C9FAA9 /* Helper */,
+				B8265A6027D79F2900C9FAA9 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B8265A5127D79EE200C9FAA9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A5F27D79F1F00C9FAA9 /* UseCase */,
+				B8265A5E27D79F1C00C9FAA9 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B8265A5227D79EE400C9FAA9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A5D27D79F1700C9FAA9 /* Repository */,
+				B8265A5C27D79F1600C9FAA9 /* Remote */,
+				B8265A5B27D79F1300C9FAA9 /* Locale */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B8265A5327D79EE600C9FAA9 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A5927D79F0E00C9FAA9 /* Injection.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		B8265A5427D79EF900C9FAA9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A5827D79F0600C9FAA9 /* View */,
+				B8265A5727D79F0400C9FAA9 /* Presenter */,
+				B8265A5627D79F0100C9FAA9 /* Router */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B8265A5527D79EFB00C9FAA9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A7327D79FAD00C9FAA9 /* View */,
+				B8265A7227D79FAA00C9FAA9 /* Presenter */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B8265A5627D79F0100C9FAA9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A7627D79FD200C9FAA9 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B8265A5727D79F0400C9FAA9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A7427D79FC700C9FAA9 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B8265A5827D79F0600C9FAA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A8327D7A01A00C9FAA9 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B8265A5B27D79F1300C9FAA9 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A6927D79F7800C9FAA9 /* LocaleDataSource.swift */,
+				B8265A6727D79F6600C9FAA9 /* Entity */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		B8265A5C27D79F1600C9FAA9 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A6527D79F6000C9FAA9 /* RemoteDataSource.swift */,
+				B8265A6B27D79F7B00C9FAA9 /* Response */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		B8265A5D27D79F1700C9FAA9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A6327D79F5100C9FAA9 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		B8265A5E27D79F1C00C9FAA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A6C27D79F9300C9FAA9 /* HeroModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8265A5F27D79F1F00C9FAA9 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A7C27D79FF500C9FAA9 /* HomeUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		B8265A6027D79F2900C9FAA9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B8265A6127D79F3B00C9FAA9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B8265A6727D79F6600C9FAA9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A7027D79FA100C9FAA9 /* HeroEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B8265A6B27D79F7B00C9FAA9 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A6E27D79F9B00C9FAA9 /* HeroResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		B8265A7227D79FAA00C9FAA9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A7A27D79FE900C9FAA9 /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B8265A7327D79FAD00C9FAA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A8127D7A01500C9FAA9 /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B8265A7E27D79FFF00C9FAA9 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				B8265A7F27D7A00600C9FAA9 /* HeroMapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,8 +539,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8265A6A27D79F7800C9FAA9 /* LocaleDataSource.swift in Sources */,
+				B8265A8027D7A00600C9FAA9 /* HeroMapper.swift in Sources */,
+				B8265A5A27D79F0E00C9FAA9 /* Injection.swift in Sources */,
+				B8265A6F27D79F9B00C9FAA9 /* HeroResponse.swift in Sources */,
+				B8265A7527D79FC700C9FAA9 /* HomePresenter.swift in Sources */,
+				B8265A6627D79F6000C9FAA9 /* RemoteDataSource.swift in Sources */,
 				B8265A1A27D79BF100C9FAA9 /* ContentView.swift in Sources */,
+				B8265A6D27D79F9300C9FAA9 /* HeroModel.swift in Sources */,
+				B8265A7D27D79FF500C9FAA9 /* HomeUseCase.swift in Sources */,
 				B8265A1827D79BF100C9FAA9 /* iOS_Test_HeroApp.swift in Sources */,
+				B8265A6427D79F5100C9FAA9 /* Repository.swift in Sources */,
+				B8265A7B27D79FE900C9FAA9 /* DetailPresenter.swift in Sources */,
+				B8265A7127D79FA100C9FAA9 /* HeroEntity.swift in Sources */,
+				B8265A8427D7A01A00C9FAA9 /* HomeView.swift in Sources */,
+				B8265A8227D7A01500C9FAA9 /* DetailView.swift in Sources */,
+				B8265A7727D79FD200C9FAA9 /* HomeRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
