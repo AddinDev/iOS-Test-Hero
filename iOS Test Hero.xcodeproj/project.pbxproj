@@ -32,6 +32,9 @@
 		B8265A8027D7A00600C9FAA9 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A7F27D7A00600C9FAA9 /* HeroMapper.swift */; };
 		B8265A8227D7A01500C9FAA9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A8127D7A01500C9FAA9 /* DetailView.swift */; };
 		B8265A8427D7A01A00C9FAA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A8327D7A01A00C9FAA9 /* HomeView.swift */; };
+		B8CC1E9127D7A28C00E28D61 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B8CC1E9027D7A28C00E28D61 /* SDWebImageSwiftUI */; };
+		B8CC1E9327D7A41B00E28D61 /* GlobalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC1E9227D7A41B00E28D61 /* GlobalHelper.swift */; };
+		B8CC1E9627D7A42E00E28D61 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC1E9527D7A42E00E28D61 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,8 @@
 		B8265A7F27D7A00600C9FAA9 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
 		B8265A8127D7A01500C9FAA9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B8265A8327D7A01A00C9FAA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B8CC1E9227D7A41B00E28D61 /* GlobalHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelper.swift; sourceTree = "<group>"; };
+		B8CC1E9527D7A42E00E28D61 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8CC1E9127D7A28C00E28D61 /* SDWebImageSwiftUI in Frameworks */,
 				B8265A4827D79E2C00C9FAA9 /* RealmSwift in Frameworks */,
 				B8265A4627D79E2C00C9FAA9 /* Realm in Frameworks */,
 				B8265A4327D79C7700C9FAA9 /* Alamofire in Frameworks */,
@@ -205,6 +211,7 @@
 		B8265A5027D79EDE00C9FAA9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B8CC1E9427D7A42600E28D61 /* API */,
 				B8265A7E27D79FFF00C9FAA9 /* Mapper */,
 				B8265A6127D79F3B00C9FAA9 /* Helper */,
 				B8265A6027D79F2900C9FAA9 /* Extensions */,
@@ -334,6 +341,7 @@
 		B8265A6127D79F3B00C9FAA9 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B8CC1E9227D7A41B00E28D61 /* GlobalHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -378,6 +386,14 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		B8CC1E9427D7A42600E28D61 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B8CC1E9527D7A42E00E28D61 /* Api.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,6 +415,7 @@
 				B8265A4227D79C7700C9FAA9 /* Alamofire */,
 				B8265A4527D79E2C00C9FAA9 /* Realm */,
 				B8265A4727D79E2C00C9FAA9 /* RealmSwift */,
+				B8CC1E9027D7A28C00E28D61 /* SDWebImageSwiftUI */,
 			);
 			productName = "iOS Test Hero";
 			productReference = B8265A1427D79BF100C9FAA9 /* iOS Test Hero.app */;
@@ -475,6 +492,7 @@
 			packageReferences = (
 				B8265A4127D79C7700C9FAA9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B8265A4427D79E2C00C9FAA9 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				B8CC1E8F27D7A28C00E28D61 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = B8265A1527D79BF100C9FAA9 /* Products */;
 			projectDirPath = "";
@@ -539,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8CC1E9627D7A42E00E28D61 /* Api.swift in Sources */,
 				B8265A6A27D79F7800C9FAA9 /* LocaleDataSource.swift in Sources */,
 				B8265A8027D7A00600C9FAA9 /* HeroMapper.swift in Sources */,
 				B8265A5A27D79F0E00C9FAA9 /* Injection.swift in Sources */,
@@ -550,6 +569,7 @@
 				B8265A7D27D79FF500C9FAA9 /* HomeUseCase.swift in Sources */,
 				B8265A1827D79BF100C9FAA9 /* iOS_Test_HeroApp.swift in Sources */,
 				B8265A6427D79F5100C9FAA9 /* Repository.swift in Sources */,
+				B8CC1E9327D7A41B00E28D61 /* GlobalHelper.swift in Sources */,
 				B8265A7B27D79FE900C9FAA9 /* DetailPresenter.swift in Sources */,
 				B8265A7127D79FA100C9FAA9 /* HeroEntity.swift in Sources */,
 				B8265A8427D7A01A00C9FAA9 /* HomeView.swift in Sources */,
@@ -899,6 +919,14 @@
 				kind = branch;
 			};
 		};
+		B8CC1E8F27D7A28C00E28D61 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -916,6 +944,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B8265A4427D79E2C00C9FAA9 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		B8CC1E9027D7A28C00E28D61 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8CC1E8F27D7A28C00E28D61 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

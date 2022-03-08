@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct HeroMapper {
+  
+//  static func responseToEntity()
+//  static func entityToModel()
+  
+}
