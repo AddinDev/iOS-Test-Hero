@@ -10,6 +10,7 @@ import Combine
 
 protocol RepositoryProtocol {
   func fetchHeroes() -> AnyPublisher<HeroModels, Error>
+  func fetchSimilarHeroes(_ hero: HeroModel) -> AnyPublisher<HeroModels, Error>
 }
 
 final class Repository {
@@ -33,7 +34,7 @@ final class Repository {
 extension Repository: RepositoryProtocol {
   
   func fetchHeroes() -> AnyPublisher<HeroModels, Error> {
-    return locale.fetchHeroes()
+    return self.locale.fetchHeroes()
       .flatMap { result -> AnyPublisher<HeroModels, Error> in
         if result.isEmpty {
           return self.remote.fetchHeroes()
@@ -52,5 +53,12 @@ extension Repository: RepositoryProtocol {
       }
       .eraseToAnyPublisher()
   }
+  
+  func fetchSimilarHeroes(_ hero: HeroModel) -> AnyPublisher<HeroModels, Error> {
+    return self.locale.fetchSimilarHeroes(HeroMapper.domainToEntity(hero))
+      .map { HeroMapper.entityToDomain(entities: $0) }
+      .eraseToAnyPublisher()
+  }
+  
   
 }

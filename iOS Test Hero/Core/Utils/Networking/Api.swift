@@ -9,6 +9,7 @@ import Foundation
 
 struct Api {
   
-  static let url = "https://api.opendota.com/api/herostats"
+  static let baseUrl = "https://api.opendota.com"
+  static let heroes = "/herostats"
   
 }

@@ -47,4 +47,22 @@ struct HeroMapper {
     }
   }
   
+  static func domainToEntity(_ model: HeroModel) -> HeroEntity {
+    let entity = HeroEntity()
+    entity.id = model.id
+    entity.name = model.name
+    entity.primaryAttr = model.primary
+    entity.attackType = model.attackType
+    entity.roles.append(objectsIn: model.roles)
+    entity.image = model.image
+    entity.icon = model.icon
+    entity.baseHealth = model.health
+    entity.baseMana = model.mana
+    entity.baseArmor = model.armor
+    entity.baseAttackMin = model.attackMin
+    entity.baseAttackMax = model.attackMax
+    entity.moveSpeed = model.speed
+    return entity
+  }
+  
 }

@@ -21,4 +21,8 @@ final class Injection {
     return HomeInteractor(provideRepository())
   }
   
+  func provideDetail(hero: HeroModel) -> DetailUseCase {
+    return DetailInteractor(provideRepository(), hero: hero)
+  }
+  
 }

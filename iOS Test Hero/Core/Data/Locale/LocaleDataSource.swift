@@ -12,6 +12,8 @@ import Combine
 protocol LocaleDataSourceProtocol {
   func addHeroes(_ heroes: HeroEntities) -> AnyPublisher<Bool, Error>
   func fetchHeroes() -> AnyPublisher<HeroEntities, Error>
+  func fetchSimilarHeroes(_ hero: HeroEntity) -> AnyPublisher<HeroEntities, Error>
+  
 }
 
 final class LocaleDataSource {
@@ -64,6 +66,40 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
       }
     }
     .eraseToAnyPublisher()
+  }
+  
+  func fetchSimilarHeroes(_ hero: HeroEntity) -> AnyPublisher<HeroEntities, Error> {
+    print("TASK: FETCHING SIMILAR HEROES - LOCALE")
+    return Future<HeroEntities, Error> { completion in
+      if let realm = self.realm {
+        let heroesResult: Results<HeroEntity> = {
+          realm.objects(HeroEntity.self)
+            .sorted(byKeyPath: "id", ascending: true)
+        }()
+        let sortedHeroes = self.sortHeroes(heroes: heroesResult.toArray(ofType: HeroEntity.self).filter({$0.id != hero.id}), hero: hero)
+        
+        let heroes = [sortedHeroes[0], sortedHeroes[1], sortedHeroes[2]]
+        print("TASK SIMILAR HEROES: \(heroes)")
+        completion(.success(heroes))
+        // .filter({ $0.primaryAttr == attribute }).filter({ $0.moveSpeed > $0.moveSpeed })
+      } else {
+        completion(.failure(DatabaseError.invalidInstance))
+      }
+    }
+    .eraseToAnyPublisher()
+  }
+  
+  private func sortHeroes(heroes: HeroEntities, hero: HeroEntity) -> HeroEntities {
+    switch hero.primaryAttr {
+      case "agi":
+        return heroes.sorted(by: { $0.moveSpeed > $1.moveSpeed && $0.roles.contains(hero.roles[0]) && $0.primaryAttr.contains(hero.primaryAttr) })
+      case "str":
+        return heroes.sorted(by: { $0.baseAttackMax > $1.baseAttackMax && $0.roles.contains(hero.roles[0]) && $0.primaryAttr.contains(hero.primaryAttr )})
+      case "int":
+        return heroes.sorted(by: { $0.baseMana > $1.baseMana && $0.roles.contains(hero.roles[0]) && $0.primaryAttr.contains(hero.primaryAttr) })
+      default:
+        return []
+    }
   }
   
 }

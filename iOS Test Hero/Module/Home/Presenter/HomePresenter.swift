@@ -5,7 +5,7 @@
 //  Created by Addin Satria on 08/03/22.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class HomePresenter: ObservableObject {
@@ -17,6 +17,8 @@ class HomePresenter: ObservableObject {
   @Published var heroes: HeroModels = []
 
   private var cancellables: Set<AnyCancellable> = []
+  
+  private let router = HomeRouter()
   
   private let useCase: HomeUseCase
   
@@ -45,9 +47,8 @@ class HomePresenter: ObservableObject {
       .store(in: &cancellables)
   }
   
-//  func linkBuilder<Content: View>(for game: GameModel, @ViewBuilder content: () -> Content) -> some View {
-//    return NavigationLink(destination: router.makeDetailView(for: game)) { content() }
-//  }
-  
+  func linkBuilder<Content: View>(for hero: HeroModel, @ViewBuilder content: () -> Content) -> some View {
+    return NavigationLink(destination: router.makeDetailView(for: hero)) { content() }
+  }
   
 }

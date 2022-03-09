@@ -26,7 +26,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
   func fetchHeroes() -> AnyPublisher<HeroResponses, Error> {
     print("TASK: FETCHING HEROES - REMOTE")
     return Future<HeroResponses, Error> { completion in
-      guard let url = URL(string: Api.url) else { return }
+      guard let url = URL(string: Api.baseUrl + Api.heroes) else { return }
       AF.request(url)
         .validate()
         .responseDecodable(of: HeroResponses.self) { response in
