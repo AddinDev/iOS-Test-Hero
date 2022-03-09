@@ -56,24 +56,54 @@ extension DetailView {
         }
         .padding(.horizontal)
       }
+      
       VStack(alignment: .leading) {
-        Text("Attack Damage: \(presenter.hero.attackMin)-\(presenter.hero.attackMax)")
-        Text("Health: \(presenter.hero.health)")
-        Text("Armor: \(presenter.hero.armor)")
-        Text("Mana: \(presenter.hero.mana)")
-        Text("Speed: \(presenter.hero.speed)")
-        Text("Attribute: \(presenter.hero.attackType)")
-        Text("Primary: \(presenter.hero.primary)")
+        HStack(spacing: 0) {
+          Text("Primary Attribute: ")
+            .fontWeight(.semibold)
+          Text(presenter.hero.primary)
+            .autocapitalization(.allCharacters)
+        }
+        HStack(spacing: 0) {
+          Text("Attack Type: ")
+            .fontWeight(.semibold)
+          Text(presenter.hero.attackType)
+        }
+        HStack(spacing: 0) {
+          Text("Attack Damage: ")
+            .fontWeight(.semibold)
+          Text("\(presenter.hero.attackMin)-\(presenter.hero.attackMax)")
+        }
+        HStack(spacing: 0) {
+          Text("Health: ")
+            .fontWeight(.semibold)
+          Text(presenter.hero.health)
+        }
+        
+        HStack(spacing: 0) {
+          Text("Armor: ")
+            .fontWeight(.semibold)
+          Text(presenter.hero.armor)
+        }
+        
+        HStack(spacing: 0) {
+          Text("Mana: ")
+            .fontWeight(.semibold)
+          Text(presenter.hero.mana)
+        }
+        
+        HStack(spacing: 0) {
+          Text("Speed: ")
+            .fontWeight(.semibold)
+          Text(presenter.hero.speed)
+        }
+        
       }
       .padding()
       HStack {
         ForEach(presenter.similarHeroes, id: \.id) { hero in
           presenter.linkBuilder(for: hero) {
-            WebImage(url: URL(string: "\(Api.baseUrl + hero.image)"))
-              .resizable()
-              .scaledToFit()
-              .cornerRadius(10)
-              .shadow(radius: 2)
+            DetailItemView(hero: hero)
           }
         }
       }
@@ -81,6 +111,23 @@ extension DetailView {
     }
   }
   
+}
+
+struct DetailItemView: View {
+  var hero: HeroModel
+  var body: some View {
+    VStack {
+      WebImage(url: URL(string: "\(Api.baseUrl + hero.image)"))
+        .resizable()
+        .scaledToFit()
+        .cornerRadius(10)
+        .shadow(radius: 2)
+      Text(hero.name)
+        .fontWeight(.semibold)
+        .foregroundColor(.black)
+        .lineLimit(1)
+    }
+  }
 }
 
 // struct DetailView_Previews: PreviewProvider {

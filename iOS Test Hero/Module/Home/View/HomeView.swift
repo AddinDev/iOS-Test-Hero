@@ -33,7 +33,6 @@ struct HomeView: View {
         }
       }
     }
-    .animation(.linear, value: 1)
     .navigationTitle(presenter.roles[presenter.selectedRole])
     .navigationBarItems(trailing:
                           filterButton
