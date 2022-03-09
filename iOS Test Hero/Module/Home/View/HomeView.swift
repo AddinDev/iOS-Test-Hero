@@ -18,13 +18,22 @@ struct HomeView: View {
   
   var body: some View {
     Group {
-      content
-        .onAppear {
-          if presenter.heroes.count == 0 {
-            presenter.fetchHeroes()
-          }
+      ZStack {
+        if presenter.isLoading {
+          loadingIndicator
+        } else if presenter.isError {
+          errorIndicator
+        } else {
+          content
+            .onAppear {
+              if presenter.heroes.count == 0 {
+                presenter.fetchHeroes()
+              }
+            }
         }
+      }
     }
+    .animation(.linear, value: 1)
     .navigationTitle(presenter.roles[presenter.selectedRole])
     .navigationBarItems(trailing:
                           filterButton
@@ -61,6 +70,29 @@ extension HomeView {
     } label: {
       Image(systemName: "ellipsis.circle.fill")
     }
+  }
+  
+  var loadingIndicator: some View {
+    VStack {
+      ProgressView()
+        .progressViewStyle(CircularProgressViewStyle())
+      Text("Loading")
+    }
+  }
+  
+  var errorIndicator: some View {
+    VStack {
+      Text("ERROR")
+        .fontWeight(.bold)
+      Text(presenter.errorMessage)
+      Button(action: {
+        presenter.fetchHeroes()
+      }) {
+        Text("Retry")
+      }
+    }
+    .foregroundColor(.red)
+    .padding()
   }
   
   var heroes: HeroModels {
