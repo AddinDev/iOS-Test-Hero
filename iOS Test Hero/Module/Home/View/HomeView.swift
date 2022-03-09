@@ -37,7 +37,7 @@ extension HomeView {
   var content: some View {
     ScrollView {
       LazyVGrid(columns: columns) {
-        ForEach(presenter.heroes) { hero in
+        ForEach(heroes) { hero in
           presenter.linkBuilder(for: hero) {
             HeroItemView(hero: hero)
           }
@@ -46,15 +46,18 @@ extension HomeView {
     }
   }
   
+  var heroes: HeroModels {
+    return presenter.selectedRole == 0 ? presenter.heroes : presenter.heroes.filter({$0.roles.contains(presenter.roles[presenter.selectedRole])})
+  }
+  
   var filterButton: some View {
     Button(action: {
       
     }) {
       Menu {
-        Button("All") { presenter.changeRole(0) }
-        Button("Carry") { presenter.changeRole(1) }
-        Button("Disabler") { presenter.changeRole(2) }
-        Button("Durable") { presenter.changeRole(3) }
+        ForEach(0..<presenter.roles.count) { i in
+          Button(presenter.roles[i]) { presenter.changeRole(i) }.disabled(i == presenter.selectedRole)
+        }
       } label: {
         Image(systemName: "ellipsis.circle.fill")
       }

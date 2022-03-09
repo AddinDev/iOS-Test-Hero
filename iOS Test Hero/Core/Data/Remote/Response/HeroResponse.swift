@@ -100,7 +100,7 @@ enum PrimaryAttr: String, Codable {
     case str = "str"
 }
 
-//enum Role: String, Codable {
+// enum Role: String, Codable {
 //    case carry = "Carry"
 //    case disabler = "Disabler"
 //    case durable = "Durable"
@@ -110,6 +110,6 @@ enum PrimaryAttr: String, Codable {
 //    case nuker = "Nuker"
 //    case pusher = "Pusher"
 //    case support = "Support"
-//}
+// }
 
 typealias HeroResponses = [HeroResponse]

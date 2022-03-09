@@ -83,8 +83,8 @@ extension DetailView {
   
 }
 
-//struct DetailView_Previews: PreviewProvider {
+// struct DetailView_Previews: PreviewProvider {
 //  static var previews: some View {
 //    DetailView()
 //  }
-//}
+// }
