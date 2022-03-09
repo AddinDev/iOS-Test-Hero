@@ -41,6 +41,7 @@ extension DetailView {
       VStack {
         HStack {
           Text("Roles")
+            .fontWeight(.semibold)
           Spacer()
         }
         .padding(.horizontal)
@@ -67,14 +68,16 @@ extension DetailView {
       .padding()
       HStack {
         ForEach(presenter.similarHeroes, id: \.id) { hero in
-          WebImage(url: URL(string: "\(Api.baseUrl + hero.image)"))
-            .resizable()
-            .scaledToFit()
-            .cornerRadius(10)
-            .shadow(radius: 2)
-            .padding()
+          presenter.linkBuilder(for: hero) {
+            WebImage(url: URL(string: "\(Api.baseUrl + hero.image)"))
+              .resizable()
+              .scaledToFit()
+              .cornerRadius(10)
+              .shadow(radius: 2)
+          }
         }
       }
+      .padding()
     }
   }
   

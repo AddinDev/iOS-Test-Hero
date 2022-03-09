@@ -18,6 +18,10 @@ class HomePresenter: ObservableObject {
 
   private var cancellables: Set<AnyCancellable> = []
   
+  @Published var selectedRole = 0
+  
+  let roles = ["All", "Carry", "Disabler", "Durable", "Escape", "Initiator", "Jungler", "Nuker", "Pusher", "Support"]
+  
   private let router = HomeRouter()
   
   private let useCase: HomeUseCase
@@ -45,6 +49,10 @@ class HomePresenter: ObservableObject {
         self.heroes = heroes
       }
       .store(in: &cancellables)
+  }
+  
+  func changeRole(_ number: Int) {
+    selectedRole = number
   }
   
   func linkBuilder<Content: View>(for hero: HeroModel, @ViewBuilder content: () -> Content) -> some View {

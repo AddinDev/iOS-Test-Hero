@@ -5,9 +5,8 @@
 //  Created by Addin Satria on 08/03/22.
 //
 
-import Foundation
+import SwiftUI
 import Combine
-import Alamofire
 
 class DetailPresenter: ObservableObject {
   
@@ -16,6 +15,8 @@ class DetailPresenter: ObservableObject {
   @Published var similarHeroes: HeroModels = []
   
   private var cancellables: Set<AnyCancellable> = []
+  
+  private let router = HomeRouter()
   
   private let useCase: DetailUseCase
   
@@ -38,6 +39,10 @@ class DetailPresenter: ObservableObject {
         self.similarHeroes = heroes
       }
       .store(in: &cancellables)
+  }
+  
+  func linkBuilder<Content: View>(for hero: HeroModel, @ViewBuilder content: () -> Content) -> some View {
+    return NavigationLink(destination: router.makeDetailView(for: hero)) { content() }
   }
   
 }

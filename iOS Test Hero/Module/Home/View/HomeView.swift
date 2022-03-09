@@ -13,7 +13,6 @@ struct HomeView: View {
   
   private let columns: [GridItem] = [
     .init(.flexible()),
-    .init(.flexible()),
     .init(.flexible())
   ]
   
@@ -26,7 +25,10 @@ struct HomeView: View {
           }
         }
     }
-    .navigationTitle("All")
+    .navigationTitle(presenter.roles[presenter.selectedRole])
+    .navigationBarItems(trailing:
+                        filterButton
+    )
   }
 }
 
@@ -37,40 +39,46 @@ extension HomeView {
       LazyVGrid(columns: columns) {
         ForEach(presenter.heroes) { hero in
           presenter.linkBuilder(for: hero) {
-            VStack {
-              WebImage(url: URL(string: "\(Api.baseUrl + hero.image)"))
-                .resizable()
-                .scaledToFit()
-                .frame(height: 50)
-              Text(hero.name)
-                .fontWeight(.semibold)
-                .foregroundColor(.black)
-            }
+            HeroItemView(hero: hero)
           }
         }
       }
     }
   }
   
+  var filterButton: some View {
+    Button(action: {
+      
+    }) {
+      Menu {
+        Button("All") { presenter.changeRole(0) }
+        Button("Carry") { presenter.changeRole(1) }
+        Button("Disabler") { presenter.changeRole(2) }
+        Button("Durable") { presenter.changeRole(3) }
+      } label: {
+        Image(systemName: "ellipsis.circle.fill")
+      }
+
+    }
+  }
+  
 }
 
-// struct HeroItemView: View {
-//  var body: some View {
-//    ScrollView {
-//        LazyVGrid(columns: columns) {
-//          ForEach(presenter.heroes) { hero in
-//            VStack {
-//              WebImage(url: URL(string: "\(Api.baseUrl + hero.image)"))
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 50)
-//              Text(hero.name)
-//            }
-//          }
-//        }
-//    }
-//  }
-//}
+struct HeroItemView: View {
+  var hero: HeroModel
+  var body: some View {
+    VStack {
+      WebImage(url: URL(string: "\(Api.baseUrl + hero.image)"))
+        .resizable()
+        .scaledToFit()
+        .frame(width: UIScreen.main.bounds.width / 2 - 30)
+        .cornerRadius(10)
+      Text(hero.name)
+        .fontWeight(.semibold)
+        .foregroundColor(.black)
+    }
+  }
+}
 
 // struct HomeView_Previews: PreviewProvider {
 //  static var previews: some View {
