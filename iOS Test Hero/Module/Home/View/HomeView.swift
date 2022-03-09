@@ -27,7 +27,7 @@ struct HomeView: View {
     }
     .navigationTitle(presenter.roles[presenter.selectedRole])
     .navigationBarItems(trailing:
-                        filterButton
+                          filterButton
     )
   }
 }
@@ -46,22 +46,37 @@ extension HomeView {
     }
   }
   
-  var heroes: HeroModels {
-    return presenter.selectedRole == 0 ? presenter.heroes : presenter.heroes.filter({$0.roles.contains(presenter.roles[presenter.selectedRole])})
-  }
-  
   var filterButton: some View {
-    Button(action: {
-      
-    }) {
-      Menu {
+    Menu {
+      Menu("Roles") {
         ForEach(0..<presenter.roles.count) { i in
           Button(presenter.roles[i]) { presenter.changeRole(i) }.disabled(i == presenter.selectedRole)
         }
-      } label: {
-        Image(systemName: "ellipsis.circle.fill")
       }
-
+      Menu("Sorted") {
+        ForEach(0..<presenter.sorts.count) { i in
+          Button(presenter.sorts[i]) { presenter.changeSort(i) }.disabled(i == presenter.selectedSort)
+        }
+      }
+    } label: {
+      Image(systemName: "ellipsis.circle.fill")
+    }
+  }
+  
+  var heroes: HeroModels {
+    return presenter.selectedRole == 0 ? sortedHeroes : sortedHeroes.filter({$0.roles.contains(presenter.roles[presenter.selectedRole])})
+  }
+  
+  var sortedHeroes: HeroModels {
+    switch presenter.selectedSort {
+      case 0:
+        return presenter.heroes.sorted(by: {$0.id < $1.id})
+      case 1:
+        return presenter.heroes.sorted(by: {$0.name < $1.name})
+      case 2:
+        return presenter.heroes.sorted(by: {$0.name > $1.name})
+      default:
+        return presenter.heroes
     }
   }
   
