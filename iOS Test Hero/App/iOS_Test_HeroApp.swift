@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct iOS_Test_HeroApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    
+    let homeUseCase = Injection.init().provideHome()
+    let homePresenter = HomePresenter(homeUseCase)
+    
+    WindowGroup {
+      ContentView()
+        .environmentObject(homePresenter)
     }
+  }
 }

@@ -7,10 +7,9 @@
 
 import Foundation
 import Combine
-import RealmSwift
 
 protocol RepositoryProtocol {
-  
+  func fetchHeroes() -> AnyPublisher<HeroModels, Error>
 }
 
 final class Repository {
@@ -33,5 +32,25 @@ final class Repository {
 
 extension Repository: RepositoryProtocol {
   
+  func fetchHeroes() -> AnyPublisher<HeroModels, Error> {
+    return locale.fetchHeroes()
+      .flatMap { result -> AnyPublisher<HeroModels, Error> in
+        if result.isEmpty {
+          return self.remote.fetchHeroes()
+            .map { HeroMapper.responseToEntity(responses: $0) }
+            .flatMap { self.locale.addHeroes($0) }
+            .filter { $0 }
+            .flatMap { _ in self.locale.fetchHeroes()
+            .map { HeroMapper.entityToDomain(entities: $0) }
+            }
+            .eraseToAnyPublisher()
+        } else {
+          return self.locale.fetchHeroes()
+            .map { HeroMapper.entityToDomain(entities: $0) }
+            .eraseToAnyPublisher()
+        }
+      }
+      .eraseToAnyPublisher()
+  }
   
 }

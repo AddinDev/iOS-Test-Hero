@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct HomeView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  @StateObject var presenter: HomePresenter
+  var body: some View {
+    List(presenter.heroes) { hero in
+      Text(hero.name)
     }
+    .onAppear {
+      if presenter.heroes.count == 0 {
+        presenter.fetchHeroes()
+      }
+    }
+  }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+extension HomeView {
+  
 }
+
+// struct HomeView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    HomeView()
+//  }
+// }

@@ -32,6 +32,9 @@
 		B8265A8027D7A00600C9FAA9 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A7F27D7A00600C9FAA9 /* HeroMapper.swift */; };
 		B8265A8227D7A01500C9FAA9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A8127D7A01500C9FAA9 /* DetailView.swift */; };
 		B8265A8427D7A01A00C9FAA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8265A8327D7A01A00C9FAA9 /* HomeView.swift */; };
+		B85ACCB627D82D89009DE12C /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85ACCB527D82D88009DE12C /* General.swift */; };
+		B85EB8EE27D8327F00094D20 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85EB8ED27D8327F00094D20 /* Results.swift */; };
+		B85EB8F027D8328B00094D20 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85EB8EF27D8328B00094D20 /* CustomError.swift */; };
 		B8CC1E9127D7A28C00E28D61 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B8CC1E9027D7A28C00E28D61 /* SDWebImageSwiftUI */; };
 		B8CC1E9327D7A41B00E28D61 /* GlobalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC1E9227D7A41B00E28D61 /* GlobalHelper.swift */; };
 		B8CC1E9627D7A42E00E28D61 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC1E9527D7A42E00E28D61 /* Api.swift */; };
@@ -80,6 +83,9 @@
 		B8265A7F27D7A00600C9FAA9 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
 		B8265A8127D7A01500C9FAA9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B8265A8327D7A01A00C9FAA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B85ACCB527D82D88009DE12C /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		B85EB8ED27D8327F00094D20 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		B85EB8EF27D8328B00094D20 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		B8CC1E9227D7A41B00E28D61 /* GlobalHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelper.swift; sourceTree = "<group>"; };
 		B8CC1E9527D7A42E00E28D61 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,7 +217,7 @@
 		B8265A5027D79EDE00C9FAA9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B8CC1E9427D7A42600E28D61 /* API */,
+				B8CC1E9427D7A42600E28D61 /* Networking */,
 				B8265A7E27D79FFF00C9FAA9 /* Mapper */,
 				B8265A6127D79F3B00C9FAA9 /* Helper */,
 				B8265A6027D79F2900C9FAA9 /* Extensions */,
@@ -334,6 +340,9 @@
 		B8265A6027D79F2900C9FAA9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B85ACCB527D82D88009DE12C /* General.swift */,
+				B85EB8ED27D8327F00094D20 /* Results.swift */,
+				B85EB8EF27D8328B00094D20 /* CustomError.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,12 +395,12 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
-		B8CC1E9427D7A42600E28D61 /* API */ = {
+		B8CC1E9427D7A42600E28D61 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				B8CC1E9527D7A42E00E28D61 /* Api.swift */,
 			);
-			path = API;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,9 +580,12 @@
 				B8265A6427D79F5100C9FAA9 /* Repository.swift in Sources */,
 				B8CC1E9327D7A41B00E28D61 /* GlobalHelper.swift in Sources */,
 				B8265A7B27D79FE900C9FAA9 /* DetailPresenter.swift in Sources */,
+				B85EB8F027D8328B00094D20 /* CustomError.swift in Sources */,
+				B85EB8EE27D8327F00094D20 /* Results.swift in Sources */,
 				B8265A7127D79FA100C9FAA9 /* HeroEntity.swift in Sources */,
 				B8265A8427D7A01A00C9FAA9 /* HomeView.swift in Sources */,
 				B8265A8227D7A01500C9FAA9 /* DetailView.swift in Sources */,
+				B85ACCB627D82D89009DE12C /* General.swift in Sources */,
 				B8265A7727D79FD200C9FAA9 /* HomeRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

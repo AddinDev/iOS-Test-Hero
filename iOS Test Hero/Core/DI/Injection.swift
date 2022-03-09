@@ -17,4 +17,8 @@ final class Injection {
     return Repository(locale: locale, remote: remote)
   }
   
+  func provideHome() -> HomeUseCase {
+    return HomeInteractor(provideRepository())
+  }
+  
 }

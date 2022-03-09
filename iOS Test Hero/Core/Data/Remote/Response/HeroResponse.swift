@@ -7,13 +7,12 @@
 
 import Foundation
 
-// MARK: - HeroResponse
 struct HeroResponse: Codable {
     let id: Int
     let name, localizedName: String
     let primaryAttr: PrimaryAttr
     let attackType: AttackType
-    let roles: [Role]
+    let roles: [String]
     let img, icon: String
     let baseHealth: Int
     let baseHealthRegen: Double
@@ -101,16 +100,16 @@ enum PrimaryAttr: String, Codable {
     case str = "str"
 }
 
-enum Role: String, Codable {
-    case carry = "Carry"
-    case disabler = "Disabler"
-    case durable = "Durable"
-    case escape = "Escape"
-    case initiator = "Initiator"
-    case jungler = "Jungler"
-    case nuker = "Nuker"
-    case pusher = "Pusher"
-    case support = "Support"
-}
+//enum Role: String, Codable {
+//    case carry = "Carry"
+//    case disabler = "Disabler"
+//    case durable = "Durable"
+//    case escape = "Escape"
+//    case initiator = "Initiator"
+//    case jungler = "Jungler"
+//    case nuker = "Nuker"
+//    case pusher = "Pusher"
+//    case support = "Support"
+//}
 
 typealias HeroResponses = [HeroResponse]
